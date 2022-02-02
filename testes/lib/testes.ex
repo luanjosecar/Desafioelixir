@@ -7,15 +7,23 @@ defmodule Testes do
     end
   end
 
+  def testeLista(lista) do
+    List.replace_at(lista, 0, 15)
+  end
+
   def main do
-    url = "http://challenge.dienekes.com.br/api/numbers?page=1"
+    # url = "http://challenge.dienekes.com.br/api/numbers?page=1"
 
-    response = HTTPoison.get!(url)
-    req = Poison.decode!(response.body)
+    # response = HTTPoison.get!(url)
+    # req = Poison.decode!(response.body)
 
-    list = req["numbers"]
+    # list = req["numbers"]
 
-    verify_floats(list)
+    # verify_floats(list)
+
+    a = [1, 2, 3, 4]
+    a = testeLista(a)
+    IO.inspect(a)
 
     # case HTTPoison.get(url) do
     #   {:ok, %{status_code: 200, body: body}} ->
