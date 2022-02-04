@@ -15,7 +15,6 @@ defmodule Testes.MixProject do
   def application do
     [
       extra_applications: [:logger]
-      mod: {MinimalServer.Application, []}
     ]
   end
 
@@ -25,9 +24,7 @@ defmodule Testes.MixProject do
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
       {:poison, "~> 5.0"},
-      {:httpoison, "~> 1.5"},
-      {:plug, "~> 1.6"},
-      {:cowboy, "~> 2.4"}
+      {:httpoison, "~> 1.5"}
     ]
   end
 end
