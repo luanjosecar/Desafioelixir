@@ -1,11 +1,7 @@
 defmodule Requests do
-  def testeLista(lista) do
-    List.replace_at(lista, 0, 15)
-  end
+  def make_request(page) when page <= 0, do: []
 
-  def make_request(0), do: []
-
-  def make_request(page) do
+  def make_request(page) when page > 0 do
     url = "http://challenge.dienekes.com.br/api/numbers?page=#{page}"
 
     url
@@ -36,7 +32,6 @@ defmodule Requests do
 
       {:error, %{reason: reason}} ->
         IO.puts(reason)
-        # do something with an error
     end
   end
 end
