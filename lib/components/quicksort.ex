@@ -11,4 +11,13 @@ defmodule Desafioelixir.Qsort do
 
     qsort(lower) ++ [pivot] ++ qsort(higher)
   end
+
+  # outra implementação
+
+  def sort([]), do: []
+
+  def sort([pivot | rest]) do
+    {left, right} = Enum.partition(rest, &(&1 < pivot))
+    sort(left) ++ [pivot | sort(right)]
+  end
 end

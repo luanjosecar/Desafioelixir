@@ -13,7 +13,7 @@ defmodule Desafioelixir.MixProject do
 
   def application do
     [
-      extra_applications: [:logger],
+      extra_applications: [:logger, :plug_cowboy],
       mod: {Desafioelixir.Application, []}
     ]
   end
