@@ -1,18 +1,12 @@
 defmodule Desafioelixir do
-  @moduledoc """
-  Documentation for `Desafioelixir`.
-  """
+  alias Desafioelixir.Requests
+  alias Desafioelixir.BubbleSort
 
-  @doc """
-  Hello world.
+  def main do
+    list = Requests.make_request(9990)
+    IO.puts("Realizando Sort")
+    list = BubbleSort.bubble_sort(list)
 
-  ## Examples
-
-      iex> Desafioelixir.hello()
-      :world
-
-  """
-  def hello do
-    :world
+    IO.inspect(list)
   end
 end

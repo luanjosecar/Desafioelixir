@@ -1,4 +1,4 @@
-defmodule BubbleSort do
+defmodule Desafioelixir.BubbleSort do
   def bubble_sort(list) do
     aux = bubble_inner(list)
 
@@ -15,13 +15,13 @@ defmodule BubbleSort do
 
   def bubble_inner(list), do: list
 
-  def main_b do
-    list = [1, 6, 2, 7, 23, 6, 1, 7, 24, 12, 6]
-    # bubble_sort(a, 0, List.lenth(a))
+  # def main_b do
+  #   list = [1, 6, 2, 7, 23, 6, 1, 7, 24, 12, 6]
+  #   # bubble_sort(a, 0, List.lenth(a))
 
-    # Enum.each(0..length(a), bar(a, ))
-    b = bubble_sort(list)
+  #   # Enum.each(0..length(a), bar(a, ))
+  #   b = bubble_sort(list)
 
-    IO.inspect(b)
-  end
+  #   IO.inspect(b)
+  # end
 end

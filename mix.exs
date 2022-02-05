@@ -11,18 +11,21 @@ defmodule Desafioelixir.MixProject do
     ]
   end
 
-  # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+      mod: {Desafioelixir.Application, []}
     ]
   end
 
-  # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
       {:poison, "~> 5.0"},
-      {:httpoison, "~> 1.5"}
+      {:httpoison, "~> 1.5"},
+      {:plug, "~> 1.6"},
+      {:cowboy, "~> 2.4"},
+      {:credo, "~> 0.10"},
+      {:plug_cowboy, "~> 2.0"}
     ]
   end
 end

@@ -1,4 +1,4 @@
-defmodule Requests do
+defmodule Desafioelixir.Requests do
   def make_request(page) when page <= 0, do: []
 
   def make_request(page) when page > 0 do
@@ -28,6 +28,7 @@ defmodule Requests do
 
       # Caso o servidor caia tente novamente
       {:ok, %{status_code: 500}} ->
+        IO.warn("Repetindo -> ")
         make_request(page)
 
       {:error, %{reason: reason}} ->

@@ -1,4 +1,4 @@
-defmodule Validation do
+defmodule Desafioelixir.Validation do
   def verify_floats(list) do
     if(Enum.all?(list, fn x -> not is_float(x) end)) do
       true
