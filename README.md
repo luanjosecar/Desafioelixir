@@ -31,13 +31,13 @@ A aplicação irá iniciar a alimentação com base na API de Link
 
 http://challenge.dienekes.com.br/api/numbers?page
 
-Variando o valor de páge até encontrar um retorno do formato []
+Variando o valor de página até encontrar um retorno do formato []
 
 Então será iniciado um servidor REST na porta 4000, quer retornará a lista alimentada de forma ordenada.
 
 ## Docker
 
-A aplicação também está disponivel no Docker:
+A aplicação também está disponível no Docker:
 
 ```bash
 $ docker push luanjosecar/desafioelixir:tagname
