@@ -2,15 +2,14 @@ defmodule Desafioelixir.Application do
   use Application
   use Supervisor
 
+  @port Application.get_env(:desafioelixir, :port) || "4000"
   def start(_type, _args) do
-    # Desafioelixir.main()
-
     children = [
       worker(Desafioelixir.Results, []),
       Plug.Cowboy.child_spec(
         scheme: :http,
         plug: Desafioelixir.Endpoint,
-        options: [port: String.to_integer(System.get_env("APP_PORT") || "4000")]
+        options: [port: String.to_integer(@port)]
       )
     ]
 

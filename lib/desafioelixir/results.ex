@@ -2,7 +2,10 @@ defmodule Desafioelixir.Results do
   use GenServer
   alias Desafioelixir.Requests
   alias Desafioelixir.BubbleSort
+  alias Desafioelixir.Validation
 
+  @request Application.get_env(:desafioelixir, :requests) || 9999
+  @port Application.get_env(:desafioelixir, :port)
   def start_link do
     GenServer.start_link(__MODULE__, [], name: :base_list)
   end
@@ -29,9 +32,12 @@ defmodule Desafioelixir.Results do
   end
 
   def create_list do
-    list = Requests.make_request(9999)
-    IO.puts("Realizando Sort")
+    IO.puts("Iniciando Requests da plataforma na página #{@request}")
+    list = Requests.make_request(@request)
+    IO.puts("Requisições finalizadas")
+    IO.puts("Realizando Sort da Lista obtida")
     list = BubbleSort.bubble_sort(list)
-    add_list(list)
+    if Validation.verify_floats(list) == true, do: add_list(list)
+    IO.puts("Starting server at http://localhost:#{@port}/")
   end
 end

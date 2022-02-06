@@ -9,7 +9,7 @@ defmodule Desafioelixir.Requests do
     |> Map.put(:query, URI.encode_query(rrsets: false))
     |> URI.to_string()
 
-    IO.puts(url)
+    # IO.puts(url)
 
     case HTTPoison.get(url) do
       {:ok, %{status_code: 200, body: body}} ->
@@ -28,7 +28,7 @@ defmodule Desafioelixir.Requests do
 
       # Caso o servidor caia tente novamente
       {:ok, %{status_code: 500}} ->
-        IO.warn("Repetindo -> ")
+        # IO.warn("Repetindo -> ")
         make_request(page)
 
       {:error, %{reason: reason}} ->
