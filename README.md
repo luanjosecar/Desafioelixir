@@ -1,21 +1,44 @@
 # Desafioelixir
 
-**TODO: Add description**
+Sistema desenvolvido a partir da linguagem elixir que se alimenta de uma API e retornar uma lista de valores ordenados
 
-## Installation
+## Instalação
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `desafioelixir` to your list of dependencies in `mix.exs`:
+De forma a rodar o código se é necessário instalar os sistemas Elixir/Earlang. Os passos para a instalação podem ser encontrado em
 
-```elixir
-def deps do
-  [
-    {:desafioelixir, "~> 0.1.0"}
-  ]
-end
+https://elixir-lang.org/install.html
+
+Com os mesmos instalados no terminal executaremos as seguintes linhas de código :
+
+```bash
+# Baixando o repositório
+
+$ git clone https://github.com/luanjosecar/Desafioelixir.git
+
+# Entrar na pasta
+$ cd Desafioelixir
+
+# Instalar dependências adicionais
+$ mix deps.get
+
+# Execução da aplicação
+
+$ mix run --no-halt
+
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/desafioelixir>.
+A aplicação irá iniciar a alimentação com base na API de Link
 
+http://challenge.dienekes.com.br/api/numbers?page
+
+Variando o valor de páge até encontrar um retorno do formato []
+
+Então será iniciado um servidor REST na porta 4000, quer retornará a lista alimentada de forma ordenada.
+
+## Docker
+
+A aplicação também está disponivel no Docker:
+
+```bash
+$ docker push luanjosecar/desafioelixir:tagname
+```
